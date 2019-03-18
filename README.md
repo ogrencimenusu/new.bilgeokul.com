@@ -1,2 +1,2 @@
-# duja-otel
-<a href="https://ogrencimenusu.github.io/duja-otel/dist">Dist</a>
+# new.bilgeokul.com
+<a href="https://ogrencimenusu.github.io/new.bilgeokul.com/">Dist</a>
