@@ -25,6 +25,19 @@ $light-gray:#f5f5f5;
     background: $blue;
     .navbar{
       padding: 0px 15px;
+      .navbar-toggler{
+        outline: 0 !important;
+        border: 1px solid $blue;
+        padding: 7px 10px;
+        color: $white;
+        &[aria-expanded="true"]{
+          background: $white;
+          color: $blue;
+        }
+        i{
+          margin-left: 15px;
+        }
+      }
       .navbar-brand{
         color: $orange;
       }
@@ -49,7 +62,21 @@ $light-gray:#f5f5f5;
   .bottom{
     background: $light-gray;
     .navbar{
+      .navbar-toggler{
+        outline: 0;
+        border: 1px solid $blue;
+        margin: auto;
+        padding: 7px 10px;
+        &[aria-expanded="true"]{
+          background: $blue;
+          color: $white;
+        }
+        i{
+          margin-left: 15px;
+        }
+      }
       .navbar-collapse{
+        padding-top: 20px;
         .navbar-nav{
           .nav-item{
             .nav-link{
@@ -173,7 +200,7 @@ $light-gray:#f5f5f5;
       top: 0;
       left: 0;
       background-image: url('../images/referans-phuket/phuket-bg.jpg') ;
-      background-size:100% ;
+      background-size:cover ;
       background-repeat: no-repeat ;
       background-attachment: fixed;
       background-position: top center;
@@ -187,6 +214,7 @@ $light-gray:#f5f5f5;
     }
     [class*=" imghvr-"],[class^=imghvr-]{
       background-color: transparent;
+      margin-bottom: 30px;
       &:before{
         background: rgba($red,.6);
       }
@@ -199,6 +227,15 @@ $light-gray:#f5f5f5;
         i{
           font-size: 30px;
         }
+      }
+    }
+    .btn{
+      border: 1px solid $yellow;
+      font-size: 14px;
+      color: $yellow;
+      &:hover{
+        background: $yellow;
+        color: $black-gray;
       }
     }
     .info-wrap{
@@ -309,7 +346,7 @@ $light-gray:#f5f5f5;
       top: 0;
       left: 0;
       background-image: url('../images/referans-phuket/phuket-bg.jpg') ;
-      background-size:100% ;
+      background-size:cover ;
       background-repeat: no-repeat ;
       background-attachment: fixed;
       background-position: top center;
@@ -387,47 +424,102 @@ $light-gray:#f5f5f5;
       border-bottom: 1px solid rgba($yellow,.3);
       padding-bottom:  15px;
     }
-    .son-items{
-      .son-item{
-        border-bottom: 1px solid rgba($white,1);
-        padding-bottom: 15px;
-        padding-top: 15px;
-        @include box-shadow(0px 11px 21px -12px #333);
+    .son-yazilar{
+      ::-webkit-scrollbar-track
+      {
+        border-radius: 10px;
+        background-color: $blue;
+        border: 1px solid $yellow;
 
-        &:hover{
-          background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        }
-        a{
-          text-decoration: none;
-          color: $white;
-        }
-        img{
-          width: 70px;
+      }
+
+      ::-webkit-scrollbar
+      {
+        width: 10px;
+        background-color: $blue;
+      }
+
+      ::-webkit-scrollbar-thumb
+      {
+        border-radius: 10px;
+        background-color: #555;
+        margin: 1px;
+
+      }
+      .son-items{
+        max-height: 320px;
+        overflow: hidden;
+        overflow-y: scroll;
+        .son-item{
+          border-bottom: 1px solid rgba($white,1);
+          padding-bottom: 15px;
+          padding-top: 15px;
           @include box-shadow(0px 11px 21px -12px #333);
 
-        }
-        .media-body{
-          font-size: 13px;
-          h5{
-            color: $yellow;
+          &:hover{
+            background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          }
+          a{
+            text-decoration: none;
+            color: $white;
+          }
+          img{
+            width: 70px;
+            @include box-shadow(0px 11px 21px -12px #333);
+
+          }
+          .media-body{
+            font-size: 13px;
+            h5{
+              color: $yellow;
+            }
           }
         }
       }
     }
   }
+
 }
 
-@media (min-width: 576px) { }
-
-@media (min-width: 768px) { }
-
-@media (min-width: 992px) {
-  .mfp-arrow-left{
-    left: -70px;
+@media (max-width:574px) {
+  .referans-slider{
+    .owl-nav{
+      button{
+        background: $white !important;
+        &:hover{
+          color: $red !important;
+        }
+        &.owl-prev {
+          left: 5px !important;
+        }
+        &.owl-next {
+          right: 5px !important;
+        }
+      }
+    }
   }
-  .mfp-arrow-right {
-    right: -70px;
+  .main-images{
+    overflow: hidden;
+  }
+}
+
+@media (max-width:991px) and (min-width:575px) {
+.referans-slider{
+    .owl-nav{
+      button{
+        background: $white !important;
+        &:hover{
+          color: $red !important;
+        }
+        &.owl-prev {
+          left: 5px !important;
+        }
+        &.owl-next {
+          right: 5px !important;
+        }
+      }
+    }
   }
 }
