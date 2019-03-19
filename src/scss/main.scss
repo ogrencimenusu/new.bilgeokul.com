@@ -149,6 +149,7 @@ $light-gray:#f5f5f5;
 .main-phuket{
   margin-bottom: 30px;
   .phuket-wrap{
+    @include box-shadow(0px 11px 21px -12px #333);
     width: 100%;
     padding: 40px 30px;
     position: relative;
@@ -215,11 +216,206 @@ $light-gray:#f5f5f5;
     }
   }
 }
+.main-images{
+  [class*=" imghvr-"],[class^=imghvr-]{
+    @include box-shadow(0px 11px 21px -12px #333);
+
+    width: 100%;
+    background-color: transparent;
+    margin-bottom: 15px;
+    figcaption{
+      background: rgba($black-gray,.6) ;
+      height: calc(100% - 44px);
+      display: flex;
+      align-items: center;
+      .caption{
+        text-align: center;
+        h3{
+
+        }
+        p{
+          font-size: 14px;
+        }
+        .btn{
+          font-size: 12px;
+          background-color: $yellow;
+          color: $black-gray;
+          padding: 4px 7px;
+        }
+      }
+      i{
+        font-size: 30px;
+      }
+    }
+    .info-wrap{
+      position: absolute;
+      z-index: 1;
+      background: rgba($black-gray,.6) ;
+      bottom: 0;
+      width: 100%;
+      .info{
+        padding: 10px 15px;
+        margin-bottom: 0;
+        .price{
+          display: block;
+          float: right;
+        }
+      }
+    }
+    .img-style{
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+    }
+    .img-genis{
+      width: 100%;
+      height: 420px;
+    }
+    .img-kucuk{
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+}
+.main-servis{
+  margin-bottom: 30px;
+  a{
+    color: $white;
+    text-decoration: none;
+  }
+  .servis-wrap{
+    @include box-shadow(0px 11px 21px -12px #333);
+    width: 100%;
+    padding: 40px 30px;
+    position: relative;
+    @include border-radius(4px);
+    overflow: hidden;
+    &:after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgba($purple,.8);
+    }
+    &:before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../images/referans-phuket/phuket-bg.jpg') ;
+      background-size:100% ;
+      background-repeat: no-repeat ;
+      background-attachment: fixed;
+      background-position: top center;
+      z-index: -2;
+
+    }
+    .sec-title{
+      text-align: center;
+      margin-bottom: 35px;
+      color: $white;
+    }
+    i{
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: $blue;
+      color: $white;
+      line-height: 100px;
+      margin-bottom: 20px;
+      font-size: 30px;
+      border: 3px solid $white;
+      @include border-radius(100px)
+    }
+    .owl-carousel{
+      .owl-stage-outer {
+        .item {
+          text-align: center;
+          position: relative;
+          @include border-radius(4px);
+          overflow: hidden;
+          height: 100%;
+          padding-top: 15px;
+          color: $white;
+          h3{
+          }
+          p{
+            font-size: 14px;
+          }
+          &:hover{
+            background: rgba($yellow,.3);
+          }
+        }
+      }
+      .owl-dots{
+        .owl-dot{
+          width: 40px;
+          height: 5px;
+          background: transparent;
+          border: 1px solid $yellow;
+          margin-right: 10px;
+          outline: 0;
+          &.active{
+            background: $yellow;
+            border-color: $white;
+          }
+          span{
+            display: none;
+          }
+        }
+      }
+      .owl-nav {
+        display: none;
+      }
+    }
+  }
+}
+
 #footer{
   color: $white;
   background: $blue;
   .footer-wrap{
     padding: 20px 30px;
+    .sec-title{
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba($yellow,.3);
+      padding-bottom:  15px;
+    }
+    .son-items{
+      .son-item{
+        border-bottom: 1px solid rgba($white,1);
+        padding-bottom: 15px;
+        padding-top: 15px;
+        @include box-shadow(0px 11px 21px -12px #333);
+
+        &:hover{
+          background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+        a{
+          text-decoration: none;
+          color: $white;
+        }
+        img{
+          width: 70px;
+          @include box-shadow(0px 11px 21px -12px #333);
+
+        }
+        .media-body{
+          font-size: 13px;
+          h5{
+            color: $yellow;
+          }
+        }
+      }
+    }
   }
 }
 
