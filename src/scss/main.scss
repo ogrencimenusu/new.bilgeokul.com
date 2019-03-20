@@ -60,7 +60,7 @@ $light-gray:#f5f5f5;
     }
   }
   .bottom{
-    background: $light-gray;
+    background: $black-gray;
     .navbar{
       .navbar-toggler{
         outline: 0;
@@ -76,20 +76,32 @@ $light-gray:#f5f5f5;
         }
       }
       .navbar-collapse{
-        padding-top: 20px;
         .navbar-nav{
+          border-radius: 100px;
+          background: rgba(#222222,.5);
+          padding: 0px 30px;
           .nav-item{
             .nav-link{
               @include transition(300ms all);
               margin: 0px 10px;
               padding: 10px 15px;
-              color: $black-gray;
+              color: $white;
               &:hover,&.active{
-                @include border-radius(20px 0px 20px 0px);
-                background: rgba($black-gray,.2);
+                @include border-radius(100px);
+                background: rgba($white,.1);
               }
               i{
-                margin-right: 10px;
+                color: $black-gray;
+                margin-right: 20px;
+                margin-left: -9px;
+                transform: scale(1.9);
+                background: #f5f5f5;
+                @include border-radius(100px);
+                padding: 9px 0px;
+                width: 30px;
+                height: 30px;
+                line-height: 12px;
+                text-align: center;
               }
             }
           }
@@ -215,8 +227,19 @@ $light-gray:#f5f5f5;
     [class*=" imghvr-"],[class^=imghvr-]{
       background-color: transparent;
       margin-bottom: 30px;
+      position: relative;
       &:before{
         background: rgba($red,.6);
+      }
+      .title{
+        font-size: 14px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: $yellow;
+        padding: 3px 10px;
+        color: $black-gray;
+        @include border-radius(100px);
       }
       figcaption{
         background-color: transparent;
@@ -245,9 +268,25 @@ $light-gray:#f5f5f5;
       .info{
         padding: 10px 15px;
         margin-bottom: 0;
-        .price{
-          display: block;
-          float: right;
+        display: flex;
+        justify-content: center;
+        .ft{
+          float: left;
+          font-size: 12px;
+          margin-right: 10px;
+          padding: 5px 7px;
+          display: flex;
+          @include border-radius(100px);
+          .yas{
+            float: left;
+            margin-right: 10px;
+          }
+        }
+        .kucukler{
+          background: $red;
+        }
+        .buyukler{
+          background: $blue;
         }
       }
     }
@@ -267,6 +306,7 @@ $light-gray:#f5f5f5;
       align-items: center;
       .caption{
         text-align: center;
+        width: 100%;
         h3{
 
         }
@@ -293,10 +333,8 @@ $light-gray:#f5f5f5;
       .info{
         padding: 10px 15px;
         margin-bottom: 0;
-        .price{
-          display: block;
-          float: right;
-        }
+        text-align: center;
+
       }
     }
     .img-style{
